@@ -197,8 +197,8 @@
 
         .terminal-input-line {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: baseline; /* Вирівнювання по базовій лінії тексту */
+            gap: 8px;
             margin-top: 10px;
         }
 
@@ -208,7 +208,8 @@
             color: #fff;
             font-family: inherit;
             font-size: 1em;
-            width: 100%;
+            flex: 1; /* Поле введення займає весь залишок рядка */
+            outline: none;
         }
 
         .terminal-input:focus { outline: none; }
