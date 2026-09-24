@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрацювання теми: ОС GNU/Linux</title>
+    <style>
+        :root {
+            --bg-color: #1e1e2e;
+            --card-bg: #2b2b3b;
+            --text-color: #dcdcdc;
+            --accent-color: #00ff66;
+            --heading-color: #50fa7b;
+            --code-bg: #181825;
+            --border-color: #44475a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        code, pre {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--code-bg);
+            color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        code {
+            padding: 2px 6px;
+        }
+
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--code-bg);
+            color: var(--heading-color);
+        }
+
+        a {
+            color: #8be9fd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Основи операційної системи GNU/Linux</h1>
+        <p>Навчальний матеріал та корисні команди CLI</p>
+    </header>
+
+    <section id="about">
+        <h2>1. Коротка інформація про ОС GNU/Linux</h2>
+        <p><strong>GNU/Linux</strong> — це сімейство вільних та відкритих Unix-подібних операційних систем, побудованих на базі ядра Linux та інструментів проекту GNU.</p>
+        <p>Ключові переваги:</p>
+        <ul>
+            <li><strong>Відкритий вихідний код (Open Source):</strong> будь-хто може переглядати, змінювати та розповсюджувати код.</li>
+            <li><strong>Безпека та стабільність:</strong> розрахована на багатокористувацьку роботу з чітким розмежуванням прав доступу.</li>
+            <li><strong>Гнучкість:</strong> використовується всюди — від мікроконтролерів і смартфонів (Android) до суперкомп'ютерів і серверів.</li>
+        </ul>
+    </section>
+
+    <section id="distros">
+        <h2>2. Популярні дистрибутиви Linux</h2>
+        <ul>
+            <li><strong>Ubuntu:</strong> найпопулярніший дистрибутив для початківців та серверів на базі Debian.</li>
+            <li><strong>Debian:</strong> стабільний дистрибутив із великою спільнотою, еталон надійності.</li>
+            <li><strong>Fedora:</strong> дистрибутив із найновішими версіями ПЗ, виступає тестовим майданчиком для Red Hat.</li>
+            <li><strong>Arch Linux:</strong> дистрибутив за принципом KISS ("Keep It Simple, Stupid") для досвідчених користувачів.</li>
+            <li><strong>Linux Mint:</strong> зручна система зі звичним інтерфейсом для тих, хто переходить з Windows.</li>
+            <li><strong>Manjaro:</strong> дружній до користувача дистрибутив на базі Arch Linux.</li>
+        </ul>
+    </section>
+
+    <section id="cli-commands">
+        <h2>3. Основні команди Linux CLI</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Команда</th>
+                    <th>Опис</th>
+                    <th>Приклад використання</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>pwd</code></td>
+                    <td>Виведе поточний робочий каталог</td>
+                    <td><code>pwd</code></td>
+                </tr>
+                <tr>
+                    <td><code>ls</code></td>
+                    <td>Покаже вміст каталогу</td>
+                    <td><code>ls -la</code></td>
+                </tr>
+                <tr>
+                    <td><code>cd</code></td>
+                    <td>Змінить поточний каталог</td>
+                    <td><code>cd /var/log</code></td>
+                </tr>
+                <tr>
+                    <td><code>echo</code></td>
+                    <td>Виведе текст або значення змінної</td>
+                    <td><code>echo "Hello Linux"</code></td>
+                </tr>
+                <tr>
+                    <td><code>touch</code></td>
+                    <td>Створить порожній файл або оновить час модифікації</td>
+                    <td><code>touch file.txt</code></td>
+                </tr>
+                <tr>
+                    <td><code>mkdir</code></td>
+                    <td>Створить новий каталог</td>
+                    <td><code>mkdir new_folder</code></td>
+                </tr>
+                <tr>
+                    <td><code>cp</code></td>
+                    <td>Скопіює файл або каталог</td>
+                    <td><code>cp file.txt /tmp/</code></td>
+                </tr>
+                <tr>
+                    <td><code>mv</code></td>
+                    <td>Перемістить або перейменує файл/каталог</td>
+                    <td><code>mv old.txt new.txt</code></td>
+                </tr>
+                <tr>
+                    <td><code>rm</code></td>
+                    <td>Видалить файл або каталог</td>
+                    <td><code>rm -rf my_folder</code></td>
+                </tr>
+                <tr>
+                    <td><code>history</code></td>
+                    <td>Покаже історію виконаних команд</td>
+                    <td><code>history | tail -n 10</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="bash-script">
+        <h2>4. BASH-скрипт: Імітація авторизації</h2>
+        <p>Нижче наведено скрипт <code>auth.sh</code>, який запитує логін та пароль у текстовому режимі:</p>
+<pre><code>#!/bin/bash
+
+# Задані правильні облікові дані
+VALID_USER="admin"
+VALID_PASS="secret123"
+
+echo "===================================="
+echo "    Вітаємо у системі Linux CLI"
+echo "===================================="
+
+# Запит логіна
+read -p "Введіть логін: " username
+
+# Запит пароля без відображення на екрані (-s)
+read -sp "Введіть пароль: " password
+echo ""
+
+# Перевірка авторизації
+if [[ "$username" == "$VALID_USER" && "$password" == "$VALID_PASS" ]]; then
+    echo "------------------------------------"
+    echo "Успіх: Авторизацію пройдено! Вітаємо, $username."
+    echo "Поточна дата: $(date)"
+    echo "Ваш каталог: $HOME"
+    echo "------------------------------------"
+else
+    echo "------------------------------------"
+    echo "Помилка: Невірний логін або пароль!"
+    echo "Доступ заборонено."
+    echo "------------------------------------"
+fi
+</code></pre>
+    </section>
+
+    <section id="sources">
+        <h2>5. Джерела інформації</h2>
+        <ul>
+            <li><a href="https://www.kernel.org/" target="_blank">Офіційний сайт ядра Linux (kernel.org)</a></li>
+            <li><a href="https://www.gnu.org/" target="_blank">Проєкт GNU (gnu.org)</a></li>
+            <li><a href="https://ubuntu.com/tutorials" target="_blank">Навчальні матеріали Ubuntu</a></li>
+            <li><a href="https://linuxcommand.org/" target="_blank">LinuxCommand.org — Вивчення командного рядка</a></li>
+        </ul>
+        <div class="ai-badge">
+            🤖 Матеріал, розкладку та код опрацьовано за допомогою штучного інтелекту <strong>Google Gemini</strong>.
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Навчальна сторінка по темі Linux & Git | Розроблено за підтримки <strong>Gemini AI</strong></p>
+    </footer>
+</div>
+
+</body>
+</html>
